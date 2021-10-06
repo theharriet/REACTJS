@@ -8,15 +8,17 @@ function Movie({year, title, summary, poster, genres}){
     
             <img src={poster} alt={title} title={title} />
         <div className="movie_data">
-            <h3 className="movie_title" style={{backgroundColor: "red"}}>{title}</h3>
+            <h3 className="movie_title">{title}</h3>
             <h5 className="movie_year">{year}</h5>
-            <ul className="genres">{genres.map((genre, index) => <li key={index} className="genres_genre">{index} {genre}</li>)}</ul>
-            <p className="movie_summary">{summary}</p>
+            <ul className="movie_genres">{genres.map((genre, index) => <li key={index} className="movie_genres">{genre}</li>)}</ul>
+            <p className="movie_summary">{summary.slice(0, 140)}...</p>
         </div>
     </div>
     );
 }
 //map function은 item과 item number(index, number 맘대로 불러) 이 두가지 정보를 줌
+
+//<h3 className="movie_title" style={{backgroundColor: "red"}}>{title}</h3> 가능
 
 Movie.propTypes = {
     id: PropTypes.number.isRequired,
@@ -29,3 +31,6 @@ Movie.propTypes = {
 
 export default Movie;
 
+//const summary = "dkjgkdjkgjadg dnkdnkgnkdng";
+//summary.length --> 3~
+//summary.slice(0, 5); ---> "dkjgk"

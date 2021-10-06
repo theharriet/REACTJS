@@ -1,13 +1,21 @@
-//4.2 Styling the Movies
+//5.0 depolying to the git hub pages
+//1. install gh-pages : npm i gh-pages
+//2. package.json에 "homepage": "https://theharriet.github.io/movie_app/" 추가
+//3. package.json script에 "deploy": "gh-pages -d build", "predeploy": "npm run build" 추가
+//    deploy : npm run deploy -> build folder에 업로드 (deploy 하면 predeploy 자동 실행)(update)
+//    predeploy : npm run build -> build folder 생성
+
+// ctrl + c ==> 서버 내리기
+
+// 사실 더이상 state를 갖기 위해 class component를 가질 필요가 없어 because of React Hook
+// 궁금하면 찾아봐
+
 import React from "react";
 import axios from "axios";
 import Movie from "./Movie";
 import "./App.css";
 
-//javascript class 안에 있으면 component class에 의해 혼란스러워져
-//Invalid DOM property `class`. Did you mean `className`? 이런에러뜸
-//div등의 className쓸때 class만 쓰지말기.
-//label 태그에는 for가 있는데 javascript에서의 for는 loop 그래서 <label htmlFor="">이렇게씀
+
 
 class App extends React.Component{
   state = {
